@@ -56,10 +56,6 @@ public class nActivity extends AppCompatActivity {
 
         line_series=new LineGraphSeries<DataPoint>();
         Viewport view_port= graph1.getViewport();
-        view_port.setYAxisBoundsManual(true);
-
-        graph1.getViewport().setMinY(-6);
-        graph1.getViewport().setMaxY(6);
         view_port.setXAxisBoundsManual(true);
         //graph1.getViewport().setMinX(0);
          //graph1.getViewport().setMaxX(10);
@@ -126,11 +122,9 @@ public class nActivity extends AppCompatActivity {
 
     private void addEntry()
     {
+            x = x + 0.1;
+            line_series.appendData(new DataPoint(x, Math.sin(x)), true, 500);//adds data to graph
 
-            x = x + 0.01;
-            line_series.appendData(new DataPoint(x, Math.sin(x) * 5), true, 100);
-
-
-    }
+    }   
 
 }
