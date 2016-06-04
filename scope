@@ -99,7 +99,7 @@ public class nActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                while(true) {
+                while(true) {//loops for continuose plotting
                     if (pause_graph) {
                         runOnUiThread(new Runnable() {
                             @Override
@@ -122,9 +122,11 @@ public class nActivity extends AppCompatActivity {
 
     private void addEntry()
     {
-            x = x + 0.1;
+            x = x + 0.1;//plots in intervals of 0.1 on x axis
             line_series.appendData(new DataPoint(x, Math.sin(x)), true, 500);//adds data to graph
+            //true set scrolloEnd Flag to true
+            //the third argument is the number of datapoint at any given point in time
 
-    }   
+    }
 
 }
